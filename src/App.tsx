@@ -1,10 +1,27 @@
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
 
-function App() {
 
+const AppLayout = () => {
   return (
-    <Header />
+    <>
+      <Header />
+    </>
+  )
+}
+
+const route = createBrowserRouter(
+  createRoutesFromElements(
+  <>
+    <Route path='/' element={<AppLayout />}/>
+  </>
+  )
+)
+
+export function App() {
+  return (
+    <RouterProvider router={route} />
   )
 }
 
